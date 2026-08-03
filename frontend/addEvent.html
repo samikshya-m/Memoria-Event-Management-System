@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Event</title>
+
+    <link rel="stylesheet" href="css/addEvent.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img src="images/orilogo.png" alt="Memoria Logo" />
+        </div>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-house"></i
+            ><a href="dashboard.html">Dashboard</a>
+          </li>
+
+          <li class="active">
+            <i class="fa-solid fa-calendar-days"></i>
+            <a href="event.html">Events</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-users"></i>
+            <a href="attendees.html">Attendees</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-user-plus"></i>
+            <a href="registration.html">Registration</a>
+          </li>
+
+          <li><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <header>
+          <div>
+            <h1>Add Event</h1>
+
+            <p>Create a new event or edit an existing one.</p>
+          </div>
+        </header>
+
+        <div class="form-card">
+          <form id="eventForm">
+            <div class="input-group">
+              <label>Event Name</label>
+
+              <input
+                type="text"
+                id="eventName"
+                placeholder="Enter event name"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label>Description</label>
+
+              <textarea
+                id="description"
+                rows="5"
+                placeholder="Write event description..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="row">
+              <div class="input-group">
+                <label>Date</label>
+
+                <input type="date" id="date" required />
+              </div>
+
+              <div class="input-group">
+                <label>Time</label>
+
+                <input type="time" id="time" required />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label>Location</label>
+
+              <input
+                type="text"
+                id="location"
+                placeholder="Enter event location"
+                required
+              />
+            </div>
+
+            <div class="buttons">
+              <button type="submit" class="save">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save Event
+              </button>
+
+              <button type="reset" class="reset">Reset</button>
+
+              <a href="event.html" class="cancel"> Cancel </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/addEvent.js"></script>
+  </body>
+</html>

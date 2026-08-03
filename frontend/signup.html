@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/signup.css" />
+
+    <title>Sign up</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="left-sidebar">
+        <img src="images/orilogo.png" alt="logo" />
+      </div>
+      <div id="right-sidebar">
+        <h1>Create Account</h1>
+
+        <p id="welcome-message">
+          Join Memoria and start preserving your memories.
+        </p>
+
+        <form>
+          <label>Full Name</label>
+          <div class="input-box">
+            <input type="text" placeholder="Enter your full name" required />
+          </div>
+
+          <label>Email Address</label>
+          <div class="input-box">
+            <input type="email" placeholder="Enter your email" required />
+          </div>
+
+          <label>Password</label>
+          <div class="input-box">
+            <input type="password" placeholder="Create a password" required />
+          </div>
+
+          <label>Confirm Password</label>
+          <div class="input-box">
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+
+          <label class="remember">
+            <input type="checkbox" required />
+            I agree to the Terms & Conditions
+          </label>
+
+          <button class="login-btn" type="submit">
+            <a href="dashboard.html">Create Account</a>
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>or sign up with</span>
+        </div>
+
+        <div class="social-buttons">
+          <button class="social google">
+            <i class="fa-brands fa-google"></i>
+            Google
+          </button>
+
+          <button class="social facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+            Facebook
+          </button>
+        </div>
+
+        <p class="signup">
+          Already have an account?
+          <a href="login.html">Login</a>
+        </p>
+      </div>
+    </div>
+    <script src="js/signup.js"></script>
+  </body>
+</html>

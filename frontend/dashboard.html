@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img src="images/orilogo.png" />
+        </div>
+
+        <ul>
+          <li class="active">
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+          </li>
+
+          <li>
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <a href="event.html">Events</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-users"></i>
+
+            <a href="attendees.html">Attendees</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-user-plus"></i>
+            <a href="registration.html">Registration</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+          </li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <header>
+          <div>
+            <h1>Dashboard</h1>
+
+            <p>Welcome back, Admin.</p>
+          </div>
+
+          <div class="profile">
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </header>
+
+        <div class="cards">
+          <div class="card">
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <h2 id="totalEvents">0</h2>
+
+            <p>Total Events</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-users"></i>
+
+            <h2 id="totalAttendees">0</h2>
+
+            <p>Attendees</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-clock"></i>
+
+            <h2 id="upcomingEvents">0</h2>
+
+            <p>Upcoming</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-ticket"></i>
+
+            <h2 id="totalRegistrations">0</h2>
+
+            <p>Registrations</p>
+          </div>
+        </div>
+
+        <div class="table-section">
+          <div class="table-header">
+            <h2>Recent Events</h2>
+
+            <button><a href="addEvent.html">Add Event</a></button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Event</th>
+
+                <th>Date</th>
+
+                <th>Location</th>
+
+                <th>Attendees</th>
+
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="recentEventsTable">
+              <tr>
+                <td>Graduation Ceremony</td>
+
+                <td>20 Jul 2026</td>
+
+                <td>Kathmandu</td>
+
+                <td>150</td>
+
+                <td><span class="status upcoming">Upcoming</span></td>
+              </tr>
+
+              <tr>
+                <td>Birthday Party</td>
+
+                <td>25 Jul 2026</td>
+
+                <td>Lalitpur</td>
+
+                <td>45</td>
+
+                <td><span class="status completed">Completed</span></td>
+              </tr>
+
+              <tr>
+                <td>Baby Shower</td>
+
+                <td>10 Aug 2026</td>
+
+                <td>Bhaktapur</td>
+
+                <td>300</td>
+
+                <td><span class="status upcoming">Upcoming</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

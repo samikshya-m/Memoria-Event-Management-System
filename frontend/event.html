@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events | Memoria</title>
+    <link rel="stylesheet" href="css/event.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img src="images/orilogo.png" alt="Memoria Logo" />
+        </div>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-house"></i><a href="dashboard.html">Dashboard</a>
+          </li>
+
+          <li class="active">
+            <i class="fa-solid fa-calendar-days"></i>
+            <a href="event.html">Events</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-users"></i>
+            <a href="attendees.html">Attendees</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-user-plus"></i>
+            <a href="registration.html">Registration</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <header>
+          <div>
+            <p>Manage your events</p>
+            <h1>Events</h1>
+          </div>
+        </header>
+
+        <div class="top-actions">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search events by name..." />
+          </div>
+
+          <a href="addEvent.html" class="add-btn">
+            <i class="fa-solid fa-plus"></i>
+            Add New Event
+          </a>
+        </div>
+
+        <div class="summary-row">
+          <div>
+            <h2>All Events</h2>
+            <p>Manage and keep track of all your events.</p>
+          </div>
+
+          <div class="count-box">
+            <strong>06</strong>
+            <span>Total Events</span>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>EVENT NAME</th>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>LOCATION</th>
+                <th>ATTENDEES</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <div class="event-name">
+                    <div class="event-icon">
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                      <strong>Tech Workshop</strong>
+                      <small>Technology</small>
+                    </div>
+                  </div>
+                </td>
+                <td>25 May 2026</td>
+                <td>10:00 AM</td>
+                <td>Kathmandu</td>
+                <td><span class="attendee-count">30</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <a href="viewEvent.html" class="view-btn">View</a>
+                    <a href="addEvent.html" class="edit-btn">Edit</a>
+                    <button class="delete-btn">Delete</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="event-name">
+                    <div class="event-icon purple">
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                      <strong>Game Night</strong>
+                      <small>Entertainment</small>
+                    </div>
+                  </div>
+                </td>
+                <td>28 May 2026</td>
+                <td>6:00 PM</td>
+                <td>Lalitpur</td>
+                <td><span class="attendee-count">20</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <a href="viewEvent.html" class="view-btn">View</a>
+                    <a href="addEvent.html" class="edit-btn">Edit</a>
+                    <button class="delete-btn">Delete</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="event-name">
+                    <div class="event-icon orange">
+                      <i class="fa-solid fa-diamond"></i>
+                    </div>
+                    <div>
+                      <strong>Wedding Ceremony</strong>
+                      <small>Journey</small>
+                    </div>
+                  </div>
+                </td>
+                <td>02 June 2026</td>
+                <td>11:00 AM</td>
+                <td>Bhaktapur</td>
+                <td><span class="attendee-count">45</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <a href="viewEvent.html" class="view-btn">View</a>
+                    <a href="addEvent.html?id=${event.id}" class="edit-btn">Edit</a>
+                    <button class="delete-btn">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+    <script src="js/event.js"></script>
+  </body>
+</html>

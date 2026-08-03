@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/registration.css" />
+
+    <title>Event Registration</title>
+  </head>
+
+  <body>
+    <div class="page-container">
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+
+        <div class="logo">
+          <img src="images/orilogo.png" alt="Memoria Logo" />
+        </div>
+
+        <nav class="nav-menu">
+
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+
+          <a href="events.html">
+            <i class="fa-solid fa-calendar-days"></i>
+            Events
+          </a>
+
+          <a href="registration.html" class="active">
+            <i class="fa-solid fa-ticket"></i>
+            Registration
+          </a>
+
+          <a href="attendees.html">
+            <i class="fa-solid fa-users"></i>
+            Attendees
+          </a>
+
+          
+
+        </nav>
+
+        <div class="logout">
+          <a href="login.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </a>
+        </div>
+
+    </div>
+
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="top-bar">
+
+          <div>
+            <p class="small-heading">JOIN AN EXPERIENCE</p>
+            <h1>Event Registration</h1>
+          </div>
+
+          <div class="user-section">
+
+            <div class="notification">
+              <i class="fa-regular fa-bell"></i>
+              <span>3</span>
+            </div>
+
+            <div class="user-info">
+
+              <div class="avatar">
+                SM
+              </div>
+
+              <div>
+                <strong>Samikshya Maharjan</strong>
+                <p>Event Participant</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </header>
+
+
+        <!-- REGISTRATION CONTENT -->
+        <section class="registration-wrapper">
+
+          <!-- EVENT INFORMATION -->
+          <div class="event-card">
+
+            <div class="event-image">
+              <img
+                src="images/conference.jpeg"
+                alt="Web Application Bootcamp"
+              />
+
+              <span class="event-status">
+                Registration Open
+              </span>
+            </div>
+
+            <div class="event-info">
+
+              <p class="event-category">
+                WORKSHOP
+              </p>
+
+              <h2>
+                Web Application Bootcamp
+              </h2>
+
+              <p class="event-description">
+                Learn the fundamentals of web application development,
+                explore modern technologies, and build your own web project.
+              </p>
+
+              <div class="event-details">
+
+                <div>
+                  <i class="fa-regular fa-calendar"></i>
+                  <span>
+                    <strong>Date</strong>
+                    July 30, 2026
+                  </span>
+                </div>
+
+                <div>
+                  <i class="fa-regular fa-clock"></i>
+                  <span>
+                    <strong>Time</strong>
+                    10:00 AM – 4:00 PM
+                  </span>
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>
+                    <strong>Location</strong>
+                    Herald College Kathmandu
+                  </span>
+                </div>
+
+              </div>
+
+              <div class="event-footer">
+
+                <div class="available-seats">
+                  <i class="fa-solid fa-users"></i>
+                  32 seats remaining
+                </div>
+
+                <div class="event-price">
+                  Free Event
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- REGISTRATION FORM -->
+          <div class="registration-card">
+
+            <div class="form-heading">
+              <h2>Register for this Event</h2>
+
+              <p>
+                Fill in your details to reserve your spot.
+              </p>
+            </div>
+
+            <form>
+
+              <div class="form-row">
+
+                <div class="form-group">
+
+                  <label for="first-name">
+                    First Name
+                  </label>
+
+                  <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+
+                    <input
+                      type="text"
+                      id="first-name"
+                      placeholder="Enter your first name"
+                      required
+                    />
+                  </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="last-name">
+                    Last Name
+                  </label>
+
+                  <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+
+                    <input
+                      type="text"
+                      id="last-name"
+                      placeholder="Enter your last name"
+                      required
+                    />
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="email">
+                  Email Address
+                </label>
+
+                <div class="input-box">
+
+                  <i class="fa-regular fa-envelope"></i>
+
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email address"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="phone">
+                  Phone Number
+                </label>
+
+                <div class="input-box">
+
+                  <i class="fa-solid fa-phone"></i>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="ticket">
+                  Ticket Type
+                </label>
+
+                <div class="input-box select-box">
+
+                  <i class="fa-solid fa-ticket"></i>
+
+                  <select id="ticket" required>
+
+                    <option value="">
+                      Select ticket type
+                    </option>
+
+                    <option value="regular">
+                      Regular Participant
+                    </option>
+
+                    <option value="student">
+                      Student Participant
+                    </option>
+
+                    <option value="guest">
+                      Guest
+                    </option>
+
+                  </select>
+
+                  <i class="fa-solid fa-chevron-down arrow"></i>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="message">
+                  Additional Message
+                  <span>(Optional)</span>
+                </label>
+
+                <textarea
+                  id="message"
+                  placeholder="Any additional information..."
+                ></textarea>
+
+              </div>
+
+
+              <label class="terms">
+
+                <input
+                  type="checkbox"
+                  required
+                />
+
+                <span>
+                  I agree to the event
+                  <a href="#">Terms & Conditions</a>
+                  and confirm that the information provided is correct.
+                </span>
+
+              </label>
+
+
+              <button
+                type="submit"
+                class="register-btn"
+              >
+
+                <i class="fa-solid fa-check"></i>
+
+                Confirm Registration
+
+              </button>
+
+            </form>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+  </body>
+</html>
