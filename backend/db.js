@@ -17,7 +17,7 @@ async function all(sql, args = []) {
 }
 
 async function init() {
-  await db.exec(`
+  await db.execute(`
 CREATE TABLE IF NOT EXISTS users (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT NOT NULL,
@@ -27,7 +27,7 @@ created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )
 `);
 
-  await db.exec(`
+  await db.execute(`
 CREATE TABLE IF NOT EXISTS events (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT NOT NULL,
@@ -39,7 +39,7 @@ created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )
 `);
 
-  await db.exec(`
+  await db.execute(`
 CREATE TABLE IF NOT EXISTS attendees (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 event_id INTEGER NOT NULL,
@@ -66,4 +66,10 @@ async function run(sql, args = []) {
   };
 }
 
-module.exports = db;
+module.exports = {
+  db,
+  get,
+  all,
+  run,
+  init,
+};
