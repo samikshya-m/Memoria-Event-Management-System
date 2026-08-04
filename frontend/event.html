@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -25,7 +25,8 @@
 
         <ul>
           <li>
-            <i class="fa-solid fa-house"></i><a href="dashboard.html">Dashboard</a>
+            <i class="fa-solid fa-house"></i
+            ><a href="dashboard.html">Dashboard</a>
           </li>
 
           <li class="active">
@@ -38,12 +39,10 @@
             <a href="attendees.html">Attendees</a>
           </li>
 
-          
-
           <li>
-  <i class="fa-solid fa-right-from-bracket"></i>
-  <a href="#" id="logoutBtn">Logout</a>
-</li>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="#" id="logoutBtn">Logout</a>
+          </li>
         </ul>
       </div>
 
@@ -92,82 +91,11 @@
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
-                <td>
-                  <div class="event-name">
-                    <div class="event-icon">
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div>
-                      <strong>Tech Workshop</strong>
-                      <small>Technology</small>
-                    </div>
-                  </div>
-                </td>
-                <td>25 May 2026</td>
-                <td>10:00 AM</td>
-                <td>Kathmandu</td>
-                <td><span class="attendee-count">30</span></td>
-                <td>
-                  <div class="action-buttons">
-                    <a href="addEvent.html" class="edit-btn">Edit</a>
-                    <button class="delete-btn">Delete</button>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <div class="event-name">
-                    <div class="event-icon purple">
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div>
-                      <strong>Game Night</strong>
-                      <small>Entertainment</small>
-                    </div>
-                  </div>
-                </td>
-                <td>28 May 2026</td>
-                <td>6:00 PM</td>
-                <td>Lalitpur</td>
-                <td><span class="attendee-count">20</span></td>
-                <td>
-                  <div class="action-buttons">
-                    <a href="addEvent.html" class="edit-btn">Edit</a>
-                    <button class="delete-btn">Delete</button>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <div class="event-name">
-                    <div class="event-icon orange">
-                      <i class="fa-solid fa-diamond"></i>
-                    </div>
-                    <div>
-                      <strong>Wedding Ceremony</strong>
-                      <small>Journey</small>
-                    </div>
-                  </div>
-                </td>
-                <td>02 June 2026</td>
-                <td>11:00 AM</td>
-                <td>Bhaktapur</td>
-                <td><span class="attendee-count">45</span></td>
-                <td>
-                  <div class="action-buttons">
-                    <a href="addEvent.html?id=${event.id}" class="edit-btn">Edit</a>
-                    <button class="delete-btn">Delete</button>
-                  </div>
-                </td>
-              </tr>
+            <tbody id="eventsTable">
+              <!-- Events loaded from JavaScript -->
             </tbody>
           </table>
         </div>
-
       </div>
     </div>
     <script src="js/event.js"></script>
