@@ -99,6 +99,7 @@ app.post("/api/login", async (req, res) => {
       success: true,
       name: user.name,
       role: user.role,
+      message: `Welcome back, ${user.name}!`,
     });
   } catch (err) {
     console.error(err);

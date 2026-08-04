@@ -1,10 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const role = localStorage.getItem("role");
+
+
+// if (role !== "admin") {
+//     window.location.href = "events.html";
+//     return;
+// }
+
   loadDashboard();
 
   async function loadDashboard() {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/dashboard/summary"
+        "http://localhost:3000/api/dashboard/summary",
       );
 
       const data = await response.json();
@@ -36,11 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
           upcoming++;
         }
 
-        const status =
-          eventDate >= today ? "Upcoming" : "Completed";
+        const status = eventDate >= today ? "Upcoming" : "Completed";
 
-        const statusClass =
-          eventDate >= today ? "upcoming" : "completed";
+        const statusClass = eventDate >= today ? "upcoming" : "completed";
 
         tbody.innerHTML += `
           <tr>

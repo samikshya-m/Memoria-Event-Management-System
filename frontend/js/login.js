@@ -29,12 +29,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || !data.success) {
         alert(data.message);
         return;
       }
 
-      window.location.href = "dashboard.html";
+      // Save logged in user
+      localStorage.setItem("role", data.role);
+      localStorage.setItem("name", data.name);
+
+      // Redirect based on role
+      if (data.role === "admin") {
+        window.location.href = "dashboard.html";
+      } else {
+        window.location.href = "events.html";
+      }
     } catch (error) {
       console.error("Login error:", error);
       alert("Something went wrong.");
