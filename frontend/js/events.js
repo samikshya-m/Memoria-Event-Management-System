@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadEvents(search = "") {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/events?search=${encodeURIComponent(search)}`
+        `http://localhost:3000/api/events?search=${encodeURIComponent(search)}`,
       );
 
       const data = await response.json();
@@ -18,21 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       events = data.data;
       renderEvents(events);
-
     } catch (error) {
-      console.error(error);
+      console.error("ERROR:", error);
+      alert(error.message);
 
       eventsContainer.innerHTML = `
-        <div class="event-card">
-          <h2>Unable to load events</h2>
-          <p>Please try again later.</p>
-        </div>
-      `;
+    <div class="event-card">
+      <h2>Unable to load events</h2>
+      <p>${error.message}</p>
+    </div>
+  `;
     }
   }
 
   function renderEvents(list) {
-
     if (list.length === 0) {
       eventsContainer.innerHTML = `
         <div class="event-card">
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     eventsContainer.innerHTML = "";
 
     list.forEach((event) => {
-
       const card = document.createElement("div");
       card.className = "event-card";
 
@@ -90,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       eventsContainer.appendChild(card);
-
     });
   }
 

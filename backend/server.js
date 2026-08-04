@@ -2,10 +2,12 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const bcrypt = require("bcryptjs");
+const cors = require("cors");
 
 const { get, all, run, init } = require("./db");
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 init().catch(console.error);
