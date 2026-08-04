@@ -46,7 +46,6 @@
             <a href="attendees.html">Attendees</a>
           </li>
 
-          
           <li>
             <i class="fa-solid fa-right-from-bracket"></i>
             <a href="#" id="logoutBtn">Logout</a>
@@ -70,7 +69,11 @@
           <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
 
-            <input type="text" placeholder="Search attendees..." />
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search attendees..."
+            />
           </div>
         </div>
 
@@ -84,7 +87,7 @@
           </div>
 
           <div class="count-box">
-            <strong>00</strong>
+            <strong id="totalAttendees">0</strong>
 
             <span>Total Attendees</span>
           </div>

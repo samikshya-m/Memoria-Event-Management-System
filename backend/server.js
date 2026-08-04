@@ -378,6 +378,41 @@ app.get("/api/events/:id/attendees", async (req, res) => {
   }
 });
 
+app.get("/api/attendees", async (req, res) => {
+  try {
+
+    const attendees = await all(`
+      SELECT
+        attendees.id,
+        attendees.name,
+        attendees.email,
+        attendees.phone,
+        attendees.ticket_type,
+        attendees.status,
+        events.name AS event_name
+      FROM attendees
+      JOIN events
+      ON attendees.event_id = events.id
+      ORDER BY attendees.registered_at DESC
+    `);
+
+    res.json({
+      success: true,
+      data: attendees,
+    });
+
+  } catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to load attendees.",
+    });
+
+  }
+});
+
 app.get("/api/dashboard/summary", async (req, res) => {
   try {
     const totalEvents = (await get("SELECT COUNT(*) AS count FROM events"))
