@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f7f4ef;
+  color: #2f2f2f;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 70px;
+  border-bottom: 1px solid #ece7df;
+}
+
+.logo img {
+  width: 150px;
+}
+
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #2f3d33;
+}
+
+nav a.active {
+  color: #2f3d33;
+  font-weight: 600;
+}
+
+/* Event Section */
+
+.event-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 20px;
+}
+
+.event-card {
+  width: 100%;
+  max-width: 750px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 45px;
+  border: 1px solid #ece7df;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.icon {
+  width: 90px;
+  height: 90px;
+  background: #eef4ef;
+  color: #2f3d33;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+}
+
+.event-card h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #2f2f2f;
+}
+
+#description {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.details {
+  text-align: left;
+  background: #faf8f3;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 35px;
+}
+
+.details p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: #555;
+}
+
+.details p:last-child {
+  margin-bottom: 0;
+}
+
+.details i {
+  width: 30px;
+  color: #2f3d33;
+  font-size: 18px;
+}
+
+.register-btn {
+  display: inline-block;
+  background: #2f3d33;
+  color: white;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #243128;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 18px 25px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  .event-card {
+    padding: 30px 20px;
+  }
+
+  .event-card h1 {
+    font-size: 34px;
+  }
+
+  .details {
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .event-card h1 {
+    font-size: 28px;
+  }
+
+  .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .register-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}

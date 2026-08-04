@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Event | Memoria</title>
+
+    <link rel="stylesheet" href="css/register.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="images/orilogo.png" alt="Memoria">
+    </div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+</header>
+
+<section class="register-section">
+
+    <div class="register-card">
+
+        <h1>Register for Event</h1>
+
+        <p id="eventTitle">Loading Event...</p>
+
+        <form id="registerForm">
+
+            <div class="input-group">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Phone Number</label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Ticket Type</label>
+
+                <select id="ticketType">
+
+                    <option value="Standard">Standard</option>
+
+                    <option value="VIP">VIP</option>
+
+                </select>
+
+            </div>
+
+            <button type="submit" class="register-btn">
+
+                <i class="fa-solid fa-ticket"></i>
+
+                Register
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="js/register.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f7f4ef;
+  color: #2f2f2f;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 70px;
+  border-bottom: 1px solid #ece7df;
+}
+
+.logo img {
+  width: 150px;
+}
+
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #2f3d33;
+}
+
+nav a.active {
+  color: #2f3d33;
+  font-weight: 600;
+}
+
+/* Register Section */
+
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 20px;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 650px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px;
+  border: 1px solid #ece7df;
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.register-card h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #1f1f1f;
+}
+
+.register-card p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Form */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group select {
+  padding: 14px 15px;
+  border: 1px solid #ddd7cf;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  transition: .3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #2f3d33;
+  box-shadow: 0 0 0 3px rgba(47,61,51,.10);
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+/* Button */
+
+.register-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #2f3d33;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.register-btn i {
+  margin-right: 8px;
+}
+
+.register-btn:hover {
+  background: #243128;
+}
+
+/* Responsive */
+
+@media (max-width:768px) {
+
+  header {
+    padding: 18px 25px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  .register-card {
+    padding: 30px 20px;
+  }
+
+  .register-card h1 {
+    font-size: 32px;
+  }
+
+}
+
+@media (max-width:500px){
+
+  .register-card h1{
+    font-size:28px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+}
