@@ -19,10 +19,6 @@ app.get("/", (req, res) => {
   res.redirect("/home.html");
 });
 
-/* ===========================
-   SIGNUP
-=========================== */
-
 app.post("/api/signup", async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -45,10 +41,11 @@ app.post("/api/signup", async (req, res) => {
 
     const hashedPassword = bcrypt.hashSync(password, 10);
 
-    await run("INSERT INTO users(name,email,password) VALUES(?,?,?)", [
+    await run("INSERT INTO users(name,email,password,role) VALUES(?,?,?,?)", [
       name,
       email,
       hashedPassword,
+      "user",
     ]);
 
     res.json({
@@ -100,7 +97,8 @@ app.post("/api/login", async (req, res) => {
 
     res.json({
       success: true,
-      message: `Welcome back, ${user.name}!`,
+      name: user.name,
+      role: user.role,
     });
   } catch (err) {
     console.error(err);
@@ -315,10 +313,9 @@ app.post("/api/events/:id/register", async (req, res) => {
   }
 
   try {
-    const event = await get(
-      "SELECT id FROM events WHERE id = ?",
-      [req.params.id]
-    );
+    const event = await get("SELECT id FROM events WHERE id = ?", [
+      req.params.id,
+    ]);
 
     if (!event) {
       return res.status(404).json({
@@ -331,20 +328,18 @@ app.post("/api/events/:id/register", async (req, res) => {
       `INSERT INTO attendees
       (event_id, name, email, phone, ticket_type)
       VALUES (?, ?, ?, ?, ?)`,
-      [req.params.id, name, email, phone, ticketType]
+      [req.params.id, name, email, phone, ticketType],
     );
 
-    const attendee = await get(
-      "SELECT * FROM attendees WHERE id = ?",
-      [result.lastInsertRowid]
-    );
+    const attendee = await get("SELECT * FROM attendees WHERE id = ?", [
+      result.lastInsertRowid,
+    ]);
 
     res.json({
       success: true,
       message: "Registration confirmed!",
       data: attendee,
     });
-
   } catch (err) {
     console.error(err);
 
@@ -356,49 +351,40 @@ app.post("/api/events/:id/register", async (req, res) => {
 });
 
 app.get("/api/events/:id/attendees", async (req, res) => {
-
   const search = req.query.search || "";
 
   try {
-
     const attendees = await all(
       `SELECT *
        FROM attendees
        WHERE event_id = ?
        AND (name LIKE ? OR email LIKE ?)
        ORDER BY registered_at DESC`,
-      [req.params.id, `%${search}%`, `%${search}%`]
+      [req.params.id, `%${search}%`, `%${search}%`],
     );
 
     res.json({
       success: true,
       data: attendees,
     });
-
   } catch (err) {
-
     console.error(err);
 
     res.status(500).json({
       success: false,
       message: "Something went wrong.",
     });
-
   }
-
 });
 
 app.get("/api/dashboard/summary", async (req, res) => {
-
   try {
+    const totalEvents = (await get("SELECT COUNT(*) AS count FROM events"))
+      .count;
 
-    const totalEvents = (await get(
-      "SELECT COUNT(*) AS count FROM events"
-    )).count;
-
-    const totalAttendees = (await get(
-      "SELECT COUNT(*) AS count FROM attendees"
-    )).count;
+    const totalAttendees = (
+      await get("SELECT COUNT(*) AS count FROM attendees")
+    ).count;
 
     const recentEvents = await all(`
       SELECT
@@ -424,28 +410,21 @@ app.get("/api/dashboard/summary", async (req, res) => {
         recentEvents,
       },
     });
-
   } catch (err) {
-
     console.error(err);
 
     res.status(500).json({
       success: false,
       message: "Something went wrong.",
     });
-
   }
-
 });
 
 app.delete("/api/attendees/:id", async (req, res) => {
-
   try {
-
-    const attendee = await get(
-      "SELECT id FROM attendees WHERE id=?",
-      [req.params.id]
-    );
+    const attendee = await get("SELECT id FROM attendees WHERE id=?", [
+      req.params.id,
+    ]);
 
     if (!attendee) {
       return res.status(404).json({
@@ -454,27 +433,20 @@ app.delete("/api/attendees/:id", async (req, res) => {
       });
     }
 
-    await run(
-      "DELETE FROM attendees WHERE id=?",
-      [req.params.id]
-    );
+    await run("DELETE FROM attendees WHERE id=?", [req.params.id]);
 
     res.json({
       success: true,
       message: "Attendee deleted.",
     });
-
   } catch (err) {
-
     console.error(err);
 
     res.status(500).json({
       success: false,
       message: "Something went wrong.",
     });
-
   }
-
 });
 
 app.listen(PORT, () => {
