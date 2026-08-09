@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadDashboard() {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/dashboard/summary",
+        "/api/dashboard/summary",
       );
 
       const data = await response.json();

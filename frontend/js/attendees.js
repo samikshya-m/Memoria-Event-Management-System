@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
-            const response = await fetch("http://localhost:3000/api/attendees");
+            const response = await fetch("/api/attendees");
             const data = await response.json();
 
             if (!response.ok || !data.success) {
