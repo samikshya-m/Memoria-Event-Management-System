@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadEvents(search = "") {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/events?search=${encodeURIComponent(search)}`,
+        `/api/events?search=${encodeURIComponent(search)}`,
       );
 
       const data = await response.json();

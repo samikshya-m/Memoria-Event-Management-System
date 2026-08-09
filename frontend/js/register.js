@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
-            const response = await fetch(`http://localhost:3000/api/events/${eventId}`);
+            const response = await fetch(`/api/events/${eventId}`);
             const data = await response.json();
 
             if (!response.ok || !data.success) {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
-            const response = await fetch(`http://localhost:3000/api/events/${eventId}/register`, {
+            const response = await fetch(`/api/events/${eventId}/register`, {
 
                 method: "POST",
 

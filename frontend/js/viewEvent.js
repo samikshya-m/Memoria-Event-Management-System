@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
 
             const response = await fetch(
-                `http://localhost:3000/api/events/${eventId}`
+                `/api/events/${eventId}`
             );
 
             const data = await response.json();
