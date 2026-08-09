@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const url = eventId
-        ? `http://localhost:3000/api/events/${eventId}`
-        : "http://localhost:3000/api/events";
+        ? `/api/events/${eventId}`
+        : "/api/events";
 
       const method = eventId ? "PUT" : "POST";
 
